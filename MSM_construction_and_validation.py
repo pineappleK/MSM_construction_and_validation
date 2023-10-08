@@ -15,7 +15,7 @@ os.makedirs('./results', exist_ok=True)
 data = np.loadtxt('./data/tIC_input_toy.txt').astype(float)
 
 # 2. Implied timescale test for data
-k = 50 # In the toy model, k is low; it is recommended to use 300 for your simulations
+k = 100 # In the toy model, k is low; it is recommended to use 300 for your simulations
 fig, ax = plt.subplots(1, 1, figsize=(12, 4))
 cluster = pyemma.coordinates.cluster_kmeans(data, k=k, max_iter=100, stride=1, fixed_seed=True)
 dtrajs_concatenated = np.concatenate(cluster.dtrajs)
