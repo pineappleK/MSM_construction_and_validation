@@ -1,0 +1,1 @@
+data/r5_toy.nc filter=lfs diff=lfs merge=lfs -text
