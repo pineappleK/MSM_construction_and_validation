@@ -90,10 +90,8 @@ for number, i in enumerate(msm.metastable_sets):
     
     # load trajectory via mdtraj
     t0 = md.load(pdb)
-    pbar = tqdm(index_list[1:])
     t_cluster = md.load_frame(traj, index_list[0], top=parm)
-    for ix in pbar:
-        pbar.set_description("Trajectory loading")
+    for ix in index_list[1:]:
         t_join = md.load_frame(traj, ix, top=parm)
         t_cluster = md.join([t_cluster, t_join])
     atom_indices = [a.index for a in t_cluster.topology.atoms]
