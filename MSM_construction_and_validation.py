@@ -98,7 +98,7 @@ for number, i in enumerate(msm.metastable_sets):
     t_cluster = t_cluster.superpose(t0, atom_indices=atom_indices)
 
     distances = np.empty((t_cluster.n_frames, t_cluster.n_frames))
-    for num, i in enumerate(trange(t_cluster.n_frames, desc='RMSD Calc', leave=False)):
+    for num, i in enumerate(range(t_cluster.n_frames)):
         distances[i] = md.rmsd(t_cluster, t_cluster, i, atom_indices=atom_indices)
 
     for beta in [1]:
